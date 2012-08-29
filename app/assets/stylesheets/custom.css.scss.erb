@@ -1,0 +1,50 @@
+body {
+	background-image: url(<%= asset_path('wood_bg.jpg') %>);
+	font-family: "Arial";
+}
+
+ul,ol{
+	list-style:none;
+}
+
+#wall-title{
+	font-size:32px;
+	font-weight:bold;
+	width:100%;
+	text-align:center;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	color:#fff;
+}
+
+#widget-new a{
+	width:50%;
+	height:50%;
+	float:left;
+	display:block;
+	& img{
+		margin: 50px;
+	}
+}
+#widget-sample{
+	overflow:hidden;
+}
+
+.widget-head{
+	display:block;
+	width:96%;
+	margin: 5px 2% 0 2%;
+	color:#666;
+	font-size:12px;
+}
+
+.widget-body{
+	display:block;
+	width:90%;
+	height:90%;
+	margin-top: 5px;
+	padding: 15% 5% 0 5%;
+	color:#666;
+	font-size: 32px;
+	background: #eee;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}

@@ -1,0 +1,16 @@
+<div id="wall-title">My Classboard Faith 4-4 </div>
+<div class="gridster">
+    <ul>
+        <li id='widget-new' data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+            <%= link_to (image_tag 'new-msg.png'), new_experience_path, remote:true %>
+            <%= link_to (image_tag 'new-photo.png'), new_experience_path, remote:true %>
+            <%= link_to (image_tag 'new-video.png'), new_experience_path, remote:true %>
+            <%= link_to (image_tag 'new-discussion.png'), new_experience_path, remote:true %>
+        </li>
+        <li id='widget-sample' data-row="1" data-col="1" data-sizex="4" data-sizey="2">
+        	<span class='widget-head'>Andy posted a message 2 days ago.</span>
+        	<div class='widget-body'>This is a great experience!</div>
+        </li>
+        <%= render @experiences %>
+    </ul>
+</div>
