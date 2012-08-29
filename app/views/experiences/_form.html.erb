@@ -1,4 +1,4 @@
 <%= form_for(@experience, remote: true) do |f| %>
-	<%= f.text_area :content, cols: '20', rows: '10' %><br />
+	<%= f.text_area :content, cols: '20', rows: '10', placeholder:'type message here' %><br />
 	<%= f.submit 'create' %>
 <% end %>

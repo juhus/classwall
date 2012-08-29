@@ -7404,3 +7404,205 @@ Served asset /new-video.png - 304 Not Modified (0ms)
 
 Started GET "/assets/new-discussion.png" for 127.0.0.1 at 2012-08-29 15:07:58 +0800
 Served asset /new-discussion.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-29 15:28:09 +0800
+Processing by WallsController#show as HTML
+  [1m[36mExperience Load (0.0ms)[0m  [1mSELECT "experiences".* FROM "experiences" ORDER BY created_at desc[0m
+  Rendered experiences/_experience.html.erb (70.0ms)
+  Rendered walls/show.html.erb within layouts/application (96.0ms)
+Completed 500 Internal Server Error in 104ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 2)):
+    1: <li id='widget-new' data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+    2: 	<span class='widget-head'>Guest posted a message <%= pluralize(time_ago_in_words experience.created_at)%>.</span>
+    3: 	<span class='widget-body'><%= experience.content %></span>
+    4: 	
+    5: </li>
+  app/views/experiences/_experience.html.erb:2:in `_app_views_experiences__experience_html_erb__458945769_33814092'
+  app/views/walls/show.html.erb:14:in `_app_views_walls_show_html_erb___947577872_29808096'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (37.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-29 15:29:22 +0800
+Processing by WallsController#show as HTML
+  [1m[35mExperience Load (0.0ms)[0m  SELECT "experiences".* FROM "experiences" ORDER BY created_at desc
+  Rendered experiences/_experience.html.erb (2.0ms)
+  Rendered walls/show.html.erb within layouts/application (8.0ms)
+Compiled custom.css  (16ms)  (pid 11388)
+Compiled application.css  (1ms)  (pid 11388)
+Completed 200 OK in 131ms (Views: 130.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.gridster.css?body=1" for 127.0.0.1 at 2012-08-29 15:29:22 +0800
+Served asset /jquery.gridster.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-08-29 15:29:22 +0800
+Served asset /custom.css - 200 OK (7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-29 15:29:22 +0800
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-08-29 15:29:22 +0800
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-29 15:29:22 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-29 15:29:22 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.gridster.js?body=1" for 127.0.0.1 at 2012-08-29 15:29:23 +0800
+Served asset /jquery.gridster.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-29 15:29:23 +0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wood_bg.jpg" for 127.0.0.1 at 2012-08-29 15:29:23 +0800
+Served asset /wood_bg.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new-msg.png" for 127.0.0.1 at 2012-08-29 15:29:23 +0800
+Served asset /new-msg.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new-photo.png" for 127.0.0.1 at 2012-08-29 15:29:23 +0800
+Served asset /new-photo.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/new-video.png" for 127.0.0.1 at 2012-08-29 15:29:23 +0800
+Served asset /new-video.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new-discussion.png" for 127.0.0.1 at 2012-08-29 15:29:23 +0800
+Served asset /new-discussion.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-29 15:29:58 +0800
+Processing by WallsController#show as HTML
+  [1m[36mExperience Load (1.0ms)[0m  [1mSELECT "experiences".* FROM "experiences" ORDER BY created_at desc[0m
+  Rendered experiences/_experience.html.erb (2.0ms)
+  Rendered walls/show.html.erb within layouts/application (27.0ms)
+Compiled custom.css  (14ms)  (pid 11388)
+Compiled application.css  (0ms)  (pid 11388)
+Completed 200 OK in 138ms (Views: 137.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-29 15:29:58 +0800
+Served asset /application.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-29 15:29:58 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.gridster.css?body=1" for 127.0.0.1 at 2012-08-29 15:29:58 +0800
+Served asset /jquery.gridster.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-08-29 15:29:58 +0800
+Served asset /custom.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-08-29 15:29:58 +0800
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-29 15:29:58 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.gridster.js?body=1" for 127.0.0.1 at 2012-08-29 15:29:58 +0800
+Served asset /jquery.gridster.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-29 15:29:58 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/wood_bg.jpg" for 127.0.0.1 at 2012-08-29 15:29:58 +0800
+Served asset /wood_bg.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new-msg.png" for 127.0.0.1 at 2012-08-29 15:29:59 +0800
+Served asset /new-msg.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new-photo.png" for 127.0.0.1 at 2012-08-29 15:29:59 +0800
+Served asset /new-photo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new-video.png" for 127.0.0.1 at 2012-08-29 15:29:59 +0800
+Served asset /new-video.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new-discussion.png" for 127.0.0.1 at 2012-08-29 15:29:59 +0800
+Served asset /new-discussion.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-29 15:30:26 +0800
+Processing by WallsController#show as HTML
+  [1m[35mExperience Load (0.0ms)[0m  SELECT "experiences".* FROM "experiences" ORDER BY created_at desc
+  Rendered experiences/_experience.html.erb (2.0ms)
+  Rendered walls/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 18ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.gridster.css?body=1" for 127.0.0.1 at 2012-08-29 15:30:26 +0800
+Served asset /jquery.gridster.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-29 15:30:26 +0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-08-29 15:30:26 +0800
+Served asset /custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-29 15:30:26 +0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-08-29 15:30:26 +0800
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-29 15:30:26 +0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.gridster.js?body=1" for 127.0.0.1 at 2012-08-29 15:30:26 +0800
+Served asset /jquery.gridster.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-29 15:30:26 +0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/new-msg.png" for 127.0.0.1 at 2012-08-29 15:30:27 +0800
+Served asset /new-msg.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new-video.png" for 127.0.0.1 at 2012-08-29 15:30:27 +0800
+Served asset /new-video.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new-photo.png" for 127.0.0.1 at 2012-08-29 15:30:27 +0800
+Served asset /new-photo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new-discussion.png" for 127.0.0.1 at 2012-08-29 15:30:27 +0800
+Served asset /new-discussion.png - 304 Not Modified (0ms)

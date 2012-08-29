@@ -1,3 +1,4 @@
 <li id='widget-new' data-row="1" data-col="1" data-sizex="2" data-sizey="2">
-	<%= experience.content %>
+	<span class='widget-head'>Guest posted a message <%= time_ago_in_words experience.created_at %>.</span>
+	<span class='widget-body'><%= experience.content %></span>
 </li>
