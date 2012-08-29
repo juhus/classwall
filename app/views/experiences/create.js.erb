@@ -1,1 +1,1 @@
-gridster.add_widget('<li><%= escape_javascript(render inline:@experience.content) %></li>', 2, 2,3,1);
+gridster.add_widget('<li id="widget-new"><span class="widget-head">Guest posted a message <%= escape_javascript(time_ago_in_words @experience.created_at) %>.</span><span class="widget-body"><%= escape_javascript(@experience.content) %></span></li>',2,2,3,1);
