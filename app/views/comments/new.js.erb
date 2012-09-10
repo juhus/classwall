@@ -1,0 +1,4 @@
+$items = $('#'+'<%="item-#{@experience.id}"%>'+' .item-footer:first');
+$items.after('<%= escape_javascript(render "form")%>');
+$container.masonry('reload');
+$('<%="#item-#{@experience.id} .new-comment textarea"%>').focus();

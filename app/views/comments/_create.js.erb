@@ -1,0 +1,4 @@
+$items = $('<%="#item-#{@comment.experience_id} .new-comment"%>');
+$container.masonry('remove',$items);
+$items = $('<%="#item-#{@comment.experience_id} .item-footer:first"%>');
+$items.after('here');

@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
+gem 'carrierwave'
+gem 'rmagick'
+gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

@@ -1,0 +1,4 @@
+<%= form_for(Experience.new, remote: true) do |f| %>
+	<%= f.file_field :photo %><br />
+	<%= f.submit 'create' %>
+<% end %>

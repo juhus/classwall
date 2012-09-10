@@ -1,4 +1,12 @@
-<li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
-	<span class='widget-head'>Guest posted a message <%= time_ago_in_words experience.created_at %>.</span>
-	<span class='widget-body'><%= experience.content %></span>
-</li>
+<div class="item" id='<%= "item-#{experience.id}"%>'>
+	<% if experience.content? %>
+		<span class='item-body'><%= experience.content%></span>
+	<%end%>
+	<% if experience.photo? %>
+		<span class='item-photo'><%= image_tag experience.photo_url(:thumb).to_s %></span>
+	<%end%>
+	<span class='item-footer'>Guest posted a message <%= time_ago_in_words experience.created_at %>. <%= link_to 'Comment', new_experience_comment_path(experience), class:'item-addcomment', remote: true %></span>
+	<% if experience.comments.exists? %>
+		<%= render experience.comments.order('created_at desc') %>
+	<%end%>
+</div>

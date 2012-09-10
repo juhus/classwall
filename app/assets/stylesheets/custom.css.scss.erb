@@ -7,6 +7,21 @@ ul,ol{
 	list-style:none;
 }
 
+textarea{
+	resize:vertical;
+	border:none;
+	background:rgba(150,170,200,0.1);
+}
+
+.item{
+	width: 290px;
+  	margin: 5px;
+  	float: left;
+  	background:rgba(255,255,255,1);
+    -webkit-box-shadow: 0 1px 8px rgba(0,0,0,0.4);
+    box-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+
 #wall-title{
 	font-size:32px;
 	font-weight:bold;
@@ -16,35 +31,55 @@ ul,ol{
 	color:#fff;
 }
 
-#widget-new a{
-	width:50%;
-	height:50%;
-	float:left;
-	display:block;
-	& img{
-		margin: 50px;
-	}
-}
-.gridster ul li{
-	overflow:hidden;
+#menu{
+	position:fixed;
+	top: 20px;
+	left: 20px;
+	z-index:99;
+	& div { display: inline-block; width: 54px;}
+	& img { display:block; margin: 0 auto;}
+	& span { font: 11px Arial; display:block; text-align:center;}
 }
 
-.widget-head{
+.item-footer{
 	display:block;
-	width:96%;
-	margin: 5px 2% 0 2%;
+	padding:8px;
+	background:rgba(252,252,252,1);
 	color:#666;
-	font-size:12px;
+	font-size:11px;
+	text-shadow: 0 2px 0 rgba(255,255,255,1);
+	border-top:1px solid rgba(230, 230, 230, 0.1);
+	border-bottom:1px solid rgba(200, 200, 200, 0.1);
 }
 
-.widget-body{
+.item-body{
 	display:block;
-	width:90%;
-	height:90%;
-	margin-top: 5px;
-	padding: 15% 5% 0 5%;
-	color:#666;
-	font-size: 32px;
-	background: #eee;
-	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+	padding:8px;
+	color:#7c7c7c;
+	font-size: 24px;
+	text-shadow: 0 2px 0 rgba(255,255,255,1);
 }
+.item-photo{
+	display:block;
+}
+.item-comments{
+	display:block;
+	font:18px Arial;
+	padding:8px;
+	color:#7c7c7c;
+	text-shadow: 0 2px 0 rgba(255,255,255,1);
+}
+.item-addcomment{
+	display:inline-block;
+	float:right;
+	font: 11px Arial;
+	color:#7c7c7c;
+	text-decoration:none;
+}
+.new-comment, .new-msg{
+	padding:8px;
+}
+#container{
+	margin-top:40px;
+}
+

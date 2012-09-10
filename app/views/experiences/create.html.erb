@@ -1,0 +1,5 @@
+<script>
+	var $itemContent='<div class="item"><span class="item-body"></span><span class="item-photo"><%= escape_javascript(image_tag @experience.photo_url(:thumb).to_s)%></span><span class="item-footer">Guest posted a message <%= escape_javascript(time_ago_in_words @experience.created_at) %>.</span></div>';
+	$('#secretReload', parent.document.body).html($itemContent);
+	$('#secretReload', parent.document.body).click();
+</script>
