@@ -42,7 +42,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   def do_this
     manipulate! do |img|
-      img.resize_to_fill!(290)
+      img.resize_to_fill!(290,290)
     end
   end
 

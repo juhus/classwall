@@ -1,9 +1,12 @@
 Classwall::Application.routes.draw do
 
+  devise_for :users
+
   resources :walls
   resources :experiences do
     resources :comments
   end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

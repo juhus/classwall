@@ -1,7 +1,7 @@
 <div id="wall-title">My Classboard Faith 4-4 </div>
 <div id="menu">
-        <div id="menu-msg"><%= image_tag 'new-msg.png'%><span>Message</span></div>
-        <div id="menu-photo"><%= image_tag 'new-photo.png'%><span>Photo</span></div>
+        <div id="menu-msg"><%= image_tag 'postIt.png'%><span>Post</span></div>
+        <div id="menu-photo"><%= image_tag 'photos.png'%><span>Photo</span></div>
 </div>
 
 <div id="container">
@@ -33,6 +33,10 @@
         preview.write("<%= escape_javascript(render template: 'experiences/new_photo')%>");
         preview.close();
     }
+    function closeItem(){
+        var rty = this;
+        alert(rty);
+    }
     $(function(){
         //check activerecord for new entry, load new entry to masonry
         $('#secretReload').click(function(){
@@ -59,7 +63,8 @@
                 $items=$('.item.new.photo'); 
                 $container.masonry('remove', $items).masonry('reload');
             }else{
-                $itemContent = $('<div class="item new photo"><iframe seamless="seamless" id="mirror" name="mirror-frame"></iframe></div>');
+                $itemContent = $('<div class="item new photo"><%= escape_javascript(render template: "experiences/new_photo")%></div>');
+                //$itemContent = $('<div class="item new photo"><iframe seamless="seamless" id="mirror" name="mirror-frame"></iframe></div>');
                 $container.prepend($itemContent).masonry('reload');
                 reflection();
             }   

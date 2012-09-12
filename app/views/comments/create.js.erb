@@ -1,0 +1,5 @@
+$items = $('<%="#item-#{@comment.experience_id} .new-comment"%>');
+$container.masonry('remove',$items);
+$items = $('<%="#item-#{@comment.experience_id} .item-footer:first"%>');
+$items.after('<%= escape_javascript(render :partial => "comment", :locals => { :comment => @comment })%>');
+$container.masonry('reload');

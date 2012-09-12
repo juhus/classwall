@@ -1,6 +1,7 @@
 <div class="new-msg">
-<%= form_for(Experience.new, remote: true) do |f| %>
-	<%= f.text_area :content, cols: '31', rows: '3', placeholder:'type message here' %><br />
-	<%= f.submit 'create' %>
-<% end %>
+	<%= form_for(Experience.new, remote: true) do |f| %>
+		<%= f.text_area :content, cols: '31', rows: '3', placeholder:'type message here' %><br />
+		<%= f.submit 'create' %>
+	<% end %>
+	<button type="button" onclick="closeItem()">cancel</button>
 </div>

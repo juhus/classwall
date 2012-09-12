@@ -3,7 +3,7 @@
 		<span class='item-body'><%= experience.content%></span>
 	<%end%>
 	<% if experience.photo? %>
-		<span class='item-photo'><%= image_tag experience.photo_url(:thumb).to_s %></span>
+		<%= image_tag experience.photo_url(:thumb).to_s, class:"item-photo" %>
 	<%end%>
 	<span class='item-footer'>Guest posted a message <%= time_ago_in_words experience.created_at %>. <%= link_to 'Comment', new_experience_comment_path(experience), class:'item-addcomment', remote: true %></span>
 	<% if experience.comments.exists? %>

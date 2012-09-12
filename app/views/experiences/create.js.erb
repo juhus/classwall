@@ -1,4 +1,4 @@
 $items = $('.item.new');
 $container.masonry( 'remove', $items );
-$itemContent=$('<div class="item"><span class="item-body"><%= escape_javascript(@experience.content) %></span><span class="item-footer">Guest posted a message <%= escape_javascript(time_ago_in_words @experience.created_at) %>.</span></div>');
+$itemContent=$('<%= escape_javascript(render :partial => "experience", :locals => { :experience => @experience })%>');
 $container.prepend($itemContent).masonry('reload');

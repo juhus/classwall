@@ -1,4 +1,11 @@
-$items = $('#'+'<%="item-#{@experience.id}"%>'+' .item-footer:first');
-$items.after('<%= escape_javascript(render "form")%>');
-$container.masonry('reload');
-$('<%="#item-#{@experience.id} .new-comment textarea"%>').focus();
+if($('.new-comment').length>0){
+	$('<%="#item-#{@experience.id} .item-addcomment"%>').text('Comment');
+	$('.new-comment').remove();
+	$container.masonry('reload');
+}else{
+	$('<%="#item-#{@experience.id} .item-addcomment"%>').text('Hide');
+	$items = $('#'+'<%="item-#{@experience.id}"%>'+' .item-footer:first');
+	$items.after('<%= escape_javascript(render "form")%>');
+	$container.masonry('reload');
+	$('<%="#item-#{@experience.id} .new-comment textarea"%>').focus();
+}

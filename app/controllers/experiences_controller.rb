@@ -9,7 +9,7 @@ class ExperiencesController < ApplicationController
 		@experience = Experience.create(params[:experience])
 		respond_to do |format|
 			format.js
-			format.html
+			format.html {redirect_to root_path}
 		end
 	end
 end

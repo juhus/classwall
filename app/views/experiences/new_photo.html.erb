@@ -1,4 +1,6 @@
-<%= form_for(Experience.new, remote: true) do |f| %>
-	<%= f.file_field :photo %><br />
-	<%= f.submit 'create' %>
-<% end %>
+<div class="new-msg">
+	<%= form_for(Experience.new) do |f| %>
+		<%= f.file_field :photo %><br />
+		<%= f.submit 'create' %>
+	<% end %>
+</div>
