@@ -1,5 +1,5 @@
-$items = $('<%="#item-#{@comment.experience_id} .new-comment"%>');
-$container.masonry('remove',$items);
-$items = $('<%="#item-#{@comment.experience_id} .item-footer:first"%>');
-$items.after('<%= escape_javascript(render :partial => "comment", :locals => { :comment => @comment })%>');
+$widgets = $('<%="#widget-#{@comment.widget_id}"%>');
+$widgets.find('.widget-addcomment').text('Comment');
+$container.masonry('remove',$widgets.find('.new-comment'));
+$widgets.find('.widget-footer:first').after('<%= escape_javascript(render :partial => "comment", :locals => { :comment => @comment })%>');
 $container.masonry('reload');

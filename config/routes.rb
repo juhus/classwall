@@ -1,11 +1,12 @@
 Classwall::Application.routes.draw do
 
   devise_for :users
-
-  resources :walls
-  resources :experiences do
-    resources :comments
+  resources :walls do
+    resources :widgets
   end
+  resources :widgets do
+      resources :comments
+    end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -56,7 +57,7 @@ Classwall::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'walls#show'
+  root :to => 'walls#index'
 
   # See how all your routes lay out with "rake routes"
 

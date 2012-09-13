@@ -1,0 +1,4 @@
+$widgets = $('.widget.new');
+$container.masonry( 'remove', $widgets );
+$widgetContent=$('<%= escape_javascript(render :partial => "widget", :locals => { :widget => @widget })%>');
+$container.prepend($widgetContent).masonry('reload');

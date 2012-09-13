@@ -1,0 +1,12 @@
+<div class="widget" id='<%= "widget-#{widget.id}"%>'>
+	<% if widget.content? %>
+		<span class='widget-body'><%= widget.content%></span>
+	<%end%>
+	<% if widget.photo? %>
+		<%= link_to (image_tag widget.photo_url(:thumb).to_s, class:"widget-photo"), widget.photo_url.to_s, class:'fancybox' %>
+	<%end%>
+	<span class='widget-footer'>Guest posted a message <%= time_ago_in_words widget.created_at %>. <%= link_to 'Comment', new_widget_comment_path(widget), class:'widget-addcomment', remote: true %></span>
+	<% if widget.comments.exists? %>
+		<%= render widget.comments.order('created_at desc') %>
+	<%end%>
+</div>

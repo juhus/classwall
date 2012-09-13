@@ -1,0 +1,9 @@
+<div class='wall-list search' style="display:none">
+	<input type="search" placeholder="filter"/>
+</div>
+<div class='wall-list new'>
+	<%= link_to 'Create new wall', new_wall_path, remote: true %>
+</div>
+
+<%= render @walls %>
+

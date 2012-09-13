@@ -1,0 +1,15 @@
+if( ($('.widget.new.photo').length>0) && newContent=='photo'){ 
+	$widgets=$('.widget.new.photo'); 
+    $container.masonry('remove', $widgets).masonry('reload');
+}else if( ($('.widget.new.msg').length>0) && newContent=='msg'){ 
+	$widgets=$('.widget.new.msg'); 
+    $container.masonry('remove', $widgets).masonry('reload');
+}else{
+    if(newContent=='photo'){
+    	$widgetContent = $('<div class="widget new photo"><%= escape_javascript(render "form_photo" )%></div>');
+    }else{
+    	$widgetContent = $('<div class="widget new msg"><%= escape_javascript(render "form" )%></div>');
+    }
+    $container.prepend($widgetContent).masonry('reload');
+    $('.widget.new textarea').focus();
+}

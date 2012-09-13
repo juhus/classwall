@@ -11,24 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120912045506) do
+ActiveRecord::Schema.define(:version => 20120913084524) do
 
   create_table "comments", :force => true do |t|
-    t.integer  "experience_id"
+    t.integer  "widget_id"
     t.integer  "user_id"
     t.text     "content"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  create_table "experiences", :force => true do |t|
-    t.string   "content_type"
-    t.string   "content"
-    t.integer  "user_id"
-    t.string   "tag"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.string   "photo"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -54,6 +44,18 @@ ActiveRecord::Schema.define(:version => 20120912045506) do
     t.string   "background"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "creator"
+  end
+
+  create_table "widgets", :force => true do |t|
+    t.string   "content_type"
+    t.string   "content"
+    t.integer  "user_id"
+    t.string   "tag"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "photo"
+    t.integer  "wall_id"
   end
 
 end

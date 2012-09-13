@@ -1,0 +1,4 @@
+<%= form_for([@wall, @widget], remote: true) do |f| %>
+	<%= f.text_area :content, cols: '31', rows: '3', placeholder:'type message here'%>
+	<%= f.submit 'ok'%>
+<%end%>

@@ -8,16 +8,32 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% if user_signed_in? %>
+<div id="menu">
+    <div id="menu-account"><%= image_tag 'gnome_avatar.png'%><span>Account</span></div> 
+    <%= yield :menu %>
+</div>
+<div id="account-menu">
+	<%= link_to 'signout', destroy_user_session_path, method: :delete %>
+</div>
+<% end %>
 
-<%= yield %>
+<!-- edit flash notice
+<div class="flash">
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+</div>
+-->
+<div id="content">
+	<%= yield %>
+</div>
 
 <script>
-	    //var gridster = $(".gridster ul").gridster({
-	    //    widget_margins: [5, 5],
-	      //  widget_base_dimensions: [200, 200]	        
-	    //}).data('gridster');	
+	$(document).ready(function(){
+		$('#menu-account').click(function(){
+			$('#account-menu').toggle();
+		});
+	});
 </script>
 </body>
 </html>

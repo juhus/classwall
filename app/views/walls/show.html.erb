@@ -1,73 +1,44 @@
-<div id="wall-title">My Classboard Faith 4-4 </div>
-<div id="menu">
-        <div id="menu-msg"><%= image_tag 'postIt.png'%><span>Post</span></div>
-        <div id="menu-photo"><%= image_tag 'photos.png'%><span>Photo</span></div>
-</div>
+<%= content_for :menu do %>
+    <div id="menu-msg"><%= link_to (image_tag 'gnome_text.png'), new_wall_widget_url(@wall), remote: true, onclick:'newContent="msg"' %><span>Post</span></div>
+    <div id="menu-photo"><%= link_to (image_tag 'gnome_photo.png'), new_wall_widget_url(@wall), remote: true, onclick:'newContent="photo"' %><span>Photo</span></div>
+    <div id="menu-qna"><%= link_to (image_tag 'gnome_qna.png'), '#' %><span>Q&A</span></div>
+    <!--<div id="menu-title">Faith 4-4</div>-->
+<%end%>
 
 <div id="container">
-    <%= render @experiences %>
+    <%= render @widgets %>
 </div>
 
 <div id="secretReload" style="display:none"></div>
 
 <script>
-    var $itemContent = '';
-    var $items ='';
+    var newContent = '';
+    var $widgetContent = '';
+    var $widgets ='';
     var $container = $('#container');
     $container.imagesLoaded(function(){
           $container.masonry({
-            itemSelector : '.item',
+            widgetSelector : '.widget',
             columnWidth : 300,
             isAnimated: true,
             animationOptions: {
-                duration: 300,
+                duration: 100,
                 easing: 'linear',
                 queue: false
             }
         });
      });   
-    function reflection() {
-        var previewFrame = document.getElementById('mirror');
-        var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
-        preview.open();
-        preview.write("<%= escape_javascript(render template: 'experiences/new_photo')%>");
-        preview.close();
-    }
-    function closeItem(){
-        var rty = this;
-        alert(rty);
-    }
     $(function(){
+        $('.fancybox').fancybox({openEffect:'elastic',closeEffect:'elastic'});
         //check activerecord for new entry, load new entry to masonry
         $('#secretReload').click(function(){
-            $items = $('.item.new');
-            $itemContent = $($(this).html());
-            $container.masonry('remove',$items);
+            $widgets = $('.widget.new');
+            $widgetContent = $($(this).html());
+            $container.masonry('remove',$widgets);
             $container.imagesLoaded(function(){
-                $container.prepend($itemContent).masonry('reload');
+                $container.prepend($widgetContent).masonry('reload');
             });
             $(this).empty();
-        });
-        $('#menu-msg').click(function(){
-            if($('.item.new.msg').length>0){ 
-                $items=$('.item.new.msg'); 
-                $container.masonry('remove', $items).masonry('reload');
-            }else{
-                $itemContent = $('<div class="item new msg"><%= escape_javascript(render template: "experiences/new_message")%></div>');
-                $container.prepend($itemContent).masonry('reload');
-                $('.item.new.msg textarea').focus();
-            }
-        });
-        $('#menu-photo').click(function(){
-            if($('.item.new.photo').length>0){ 
-                $items=$('.item.new.photo'); 
-                $container.masonry('remove', $items).masonry('reload');
-            }else{
-                $itemContent = $('<div class="item new photo"><%= escape_javascript(render template: "experiences/new_photo")%></div>');
-                //$itemContent = $('<div class="item new photo"><iframe seamless="seamless" id="mirror" name="mirror-frame"></iframe></div>');
-                $container.prepend($itemContent).masonry('reload');
-                reflection();
-            }   
-        });      
+        });     
     });
 </script>

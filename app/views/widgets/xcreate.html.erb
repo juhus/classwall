@@ -1,0 +1,5 @@
+<script>
+	var $widgetContent='<div class="widget"><span class="widget-body"></span><span class="widget-photo"><%= escape_javascript(image_tag @widget.photo_url(:thumb).to_s)%></span><span class="widget-footer">Guest posted a message <%= escape_javascript(time_ago_in_words @widget.created_at) %>.</span></div>';
+	$('#secretReload', parent.document.body).html($widgetContent);
+	$('#secretReload', parent.document.body).click();
+</script>

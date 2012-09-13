@@ -1,11 +1,11 @@
-if($('.new-comment').length>0){
-	$('<%="#item-#{@experience.id} .item-addcomment"%>').text('Comment');
-	$('.new-comment').remove();
+$widgets = $('<%="#widget-#{@widget.id}"%>');
+if(($widgets.find('.new-comment')).length>0){
+	$widgets.find('.widget-addcomment').text('Comment');
+	$widgets.find('.new-comment').remove();
 	$container.masonry('reload');
 }else{
-	$('<%="#item-#{@experience.id} .item-addcomment"%>').text('Hide');
-	$items = $('#'+'<%="item-#{@experience.id}"%>'+' .item-footer:first');
-	$items.after('<%= escape_javascript(render "form")%>');
+	$widgets.find('.widget-addcomment').text('Hide');
+	$widgets.find('.widget-footer:first').after('<%= escape_javascript(render "form")%>');
 	$container.masonry('reload');
-	$('<%="#item-#{@experience.id} .new-comment textarea"%>').focus();
+	$widgets.find('.new-comment textarea').focus();
 }

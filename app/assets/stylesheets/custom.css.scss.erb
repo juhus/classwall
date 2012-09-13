@@ -10,12 +10,30 @@ ul,ol{
 textarea{
 	resize:vertical;
 	border:1px solid rgba(200,200,200,0.3);
+	border-radius:2px;
 	background:rgba(255,255,232,0.5);
-	&:focus{  outline:none; box-shadow: 0 0 6px rgba(200,200,200,0.3) inset;}
+	&:focus{ outline:none; box-shadow: 0 0 4px rgba(200,200,200,0.2) inset;}
 	&[placeholder]{ font: 14px Helvetica;}
 }
-
-.item{
+#menu{
+	position:absolute;
+	top: 10px;
+	left: 10px;
+	z-index:99;
+	& div { display: inline-block; width: auto; cursor:pointer; margin-right:10px;}
+	& img { display:block; margin: 0 auto; width:32px;}
+	& span { font: 9px Arial; display:block; text-align:center; padding-top:3px; text-shadow:0 1px 0 rgba(255,255,255,0.5);}
+}
+#menu-title{
+	font-size:24px;
+	font-weight:bold;
+	width:100%;
+	text-align:center;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	color:#fff;
+	vertical-align:top;
+}
+.widget{
 	width: 290px;
   	margin: 5px;
   	float: left;
@@ -23,28 +41,12 @@ textarea{
     -webkit-box-shadow: 0 1px 8px rgba(0,0,0,0.4);
     box-shadow: 0 1px 8px rgba(0,0,0,0.5);
     border-bottom:1px inset rgba(0, 0, 0, 0.1);
+    &.new form, .new-comment{ 
+	    padding:8px;
+		border-bottom:1px solid rgba(200, 200, 200, 0.1); 
+	}
 }
-
-#wall-title{
-	font-size:32px;
-	font-weight:bold;
-	width:100%;
-	text-align:center;
-	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-	color:#fff;
-}
-
-#menu{
-	position:absolute;
-	top: 10px;
-	left: 20px;
-	z-index:99;
-	& div { display: inline-block; width: 40px; cursor:pointer;}
-	& img { display:block; margin: 0 auto; width:24px;}
-	& span { font: 9px Arial; display:block; text-align:center; padding-top:3px; text-shadow:0 1px 0 rgba(255,255,255,0.5);}
-}
-
-.item-footer{
+.widget-footer{
 	display:block;
 	padding:8px;
 	background:rgba(255,255,255,1);
@@ -53,25 +55,24 @@ textarea{
 	text-shadow: 0 1px 0 rgba(255,255,255,0.75);
 	border-bottom:1px solid rgba(200, 200, 200, 0.1);
 }
-
-.item-body{
+.widget-body{
 	display:block;
 	padding:8px;
 	color:#5e5e5e;
 	font-size: 24px;
 	text-shadow: 0 2px 0 rgba(255,255,255,1);
 }
-.item-photo {
+.widget-photo {
 	display:block;
 }
-.item-comments{
+.widget-comments{
 	display:block;
 	font:18px Arial;
 	padding:8px;
 	color:#5e5e5e;
 	text-shadow: 0 2px 0 rgba(255,255,255,1);
 }
-.item-addcomment{
+.widget-addcomment{
 	display:inline-block;
 	float:right;
 	font: 11px Arial;
@@ -80,11 +81,41 @@ textarea{
 	padding-left: 8px;
 	border-left: 1px solid rgba(200,200,200,0.5);
 }
-.new-comment, .new-msg{
-	padding:8px;
-	border-bottom:1px solid rgba(200, 200, 200, 0.1);
+#content{
+	margin-top:60px;
 }
-#container{
-	margin-top:40px;
+#account-menu{
+	background:#fff;
+	position:absolute;
+	top: 60px;
+	left:50px;
+	width: 120px;
+	height: auto;
+	display:none;
+	z-index:99;
+	margin: 0;
+	border-radius:2px;
+	border:1px solid rgba(200,200,200,0.4);
+	box-shadow: 0 1px 8px rgba(0,0,0,0.5);
+	& a {display:block;padding:5px;}
 }
-
+.flash{
+	display:block;
+	position:absolute;
+	top:60px;
+	left:10px;
+	padding:5px;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.75);
+}
+.wall-list{
+	display:block;
+	width: 300px;
+	background:rgba(255,255,255,1);
+	min-height: 27px;
+	border-radius:2px;
+	box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+	padding:5px;
+	margin:5px;
+	& .title{ font: 16px Arial;}
+	& button{ float:right;}
+}
