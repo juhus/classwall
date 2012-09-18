@@ -1,15 +1,24 @@
 <%= content_for :menu do %>
-    <div id="menu-msg"><%= link_to (image_tag 'gnome_text.png'), new_wall_widget_url(@wall), remote: true, onclick:'newContent="msg"' %><span>Post</span></div>
-    <div id="menu-photo"><%= link_to (image_tag 'gnome_photo.png'), new_wall_widget_url(@wall), remote: true, onclick:'newContent="photo"' %><span>Photo</span></div>
-    <div id="menu-qna"><%= link_to (image_tag 'gnome_qna.png'), '#' %><span>Q&A</span></div>
-    <!--<div id="menu-title">Faith 4-4</div>-->
+    <div id="menu-qna"><%= link_to (image_tag 'gnome_qna.png'), '#' %><span>Discuss</span></div>
+    <div id="menu-photo"><%= link_to (image_tag 'gnome_photo.png'), new_wall_widget_url(@wall), remote: true, onclick:'newContent="photo"' %><span>Share</span></div>
+    <div id="menu-msg"><%= link_to (image_tag 'gnome_text.png'), new_wall_widget_url(@wall), remote: true, onclick:'newContent="msg"' %><span>Write</span></div>
 <%end%>
 
-<div id="container">
-    <%= render @widgets %>
-</div>
-
-<div id="secretReload" style="display:none"></div>
+<div id="wall-title"><%= @wall.title.upcase %></div>
+<ul id="wall-dots"></ul>
+<ul id="containers">
+    <li id="container" class="page"><%= render @widgets %></li>
+    <li id="container2" class="page">
+        <div class="topic">
+            <div class="question">
+                A function returning the HTML content to set. Receives the index position of the element in the set and the old HTML value as arguments. jQuery empties the element before calling the function; use the oldhtml argument to reference the previous content. Within the function, this refers to the current element in the set.
+            </div>
+            <div class="answer">
+                Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.
+            </div>
+        </div>
+    </li>
+</ul>
 
 <script>
     var newContent = '';
@@ -27,18 +36,41 @@
                 queue: false
             }
         });
-     });   
+    });
+    function WidgetControl(){
+        $(this).find('.control:first').toggle();
+    }
+    function PutWallDots(){
+        var pages=$('#containers').index();
+        for(i=0;i<pages;i++){
+            $('<li>.</li>').appendTo('#wall-dots');
+        }
+        $('#wall-dots li:first').addClass('active');
+    }
+    function ChangePage(){
+        var num=$(this).index();
+        var pos=15-(num*70);
+        var check1=Math.ceil(parseFloat($("#containers").css('left')));
+        var check2=Math.ceil(pos/100*parseFloat($("#containers").parent().css('width')));
+        if(check1!==check2){
+            $('#containers').css({left:String(pos)+'%'});
+            $('#wall-dots li').removeClass('active');
+            $('#wall-dots li:eq('+num+')').addClass('active');
+            return false;
+        }
+    }
     $(function(){
-        $('.fancybox').fancybox({openEffect:'elastic',closeEffect:'elastic'});
-        //check activerecord for new entry, load new entry to masonry
-        $('#secretReload').click(function(){
-            $widgets = $('.widget.new');
-            $widgetContent = $($(this).html());
-            $container.masonry('remove',$widgets);
-            $container.imagesLoaded(function(){
-                $container.prepend($widgetContent).masonry('reload');
+        PutWallDots();       
+        $('.widget').delegate('.group',"hover", WidgetControl);
+        $('.fancybox').fancybox({openEffect:'elastic',closeEffect:'elastic'});        
+        $('#menu-qna').click(function(e){
+            e.preventDefault();
+            $container.fadeOut(500,function(){
+                $('#container2').slideUp(1000,function(){
+                    $('#container2').fadeIn(500);
+                });
             });
-            $(this).empty();
-        });     
+        });
+        $('#containers li.page, #wall-dots li').click(ChangePage);
     });
 </script>

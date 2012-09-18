@@ -3,4 +3,5 @@ class Widget < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
   belongs_to :wall
   has_many :comments
+  has_many :likes
 end

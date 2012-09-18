@@ -5,8 +5,9 @@ Classwall::Application.routes.draw do
     resources :widgets
   end
   resources :widgets do
-      resources :comments
-    end
+    resources :comments
+    resources :likes
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

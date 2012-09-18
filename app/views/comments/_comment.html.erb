@@ -1,2 +1,7 @@
-<span class="widget-comments"><%= comment.content %></span>
-<span class="widget-footer">Guest posted a comment <%= time_ago_in_words comment.created_at %>.</span>
+<div class="group">
+	<div class="control">
+		<%= link_to 'Like', '#', class:'widget-addlike'%>
+	</div>
+	<span class="widget-comments"><%= comment.content %></span>
+	<span class="widget-footer">Guest posted a comment <%= time_ago_in_words comment.created_at %>.</span>
+</div>

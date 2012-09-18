@@ -8,7 +8,9 @@ class WidgetsController < ApplicationController
 	end
 	def create
 		@wall=Wall.find(params[:wall_id])
-		@widget = @wall.widgets.create(params[:widget])
+		@widget = @wall.widgets.new(params[:widget])
+		@widget.user_id = current_user.id
+		@widget.save
 		respond_to do |format|
 			format.js
 			format.html {redirect_to @wall}
